@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgres-initdb
+spec:
+  backoffLimit: 5
+  activeDeadlineSeconds: 100
+  template:
+    spec:
+      imagePullSecrets:
+        - name: docker-secret
+      restartPolicy: Never
+      containers:
+      - name: postgres-initdb
+        image: subhranil05/postgres-initdb:0.0.1
+        command: ["postgres_script"]
+        args:
+        - "testing-postgres-initdb.postgres.database.azure.com"
+        - "5432"
+        - "postgres"
+        - "admin"
+        envFrom:
+         - secretRef:
+             name: postgres-initdb-env
