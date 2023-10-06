@@ -1,0 +1,17 @@
+release:
+  name: xxxx
+  version: 0.0.1
+
+images:
+  - registry: xxxxxxx564.dkr.ecr.us-west-2.amazonaws.com
+    repository: external-images01
+    image: image01
+    tag: 0.24.0
+  - registry: xxxxxxx564.dkr.ecr.us-west-2.amazonaws.com
+    repository: external-images02
+    image: image02
+    tag: 0.0.10
+
+
+
+
