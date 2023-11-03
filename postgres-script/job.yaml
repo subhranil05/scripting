@@ -13,7 +13,7 @@ spec:
       containers:
       - name: postgres-initdb
         image: subhranil05/postgres-initdb:0.0.1
-        command: ["postgres_script"]
+        command: ["/install-ext"]
         args:
         - "testing-postgres-initdb.postgres.database.azure.com"
         - "5432"
